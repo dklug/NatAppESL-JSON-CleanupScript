@@ -18,13 +18,13 @@ try {
     {
         outJSON = {};
         outJSON.fileName = "";
-        outJSON.Name = inJSON[i].Name;
-        outJSON.Scientific_Name = inJSON[i].Scientific_Name;
-        outJSON.Type = inJSON[i].Type;
-        outJSON.Tags = inJSON[i].Tags;
-        outJSON.Overview = inJSON[i].Overview;
-        outJSON.Habitat = inJSON[i].Habitat;
-        outJSON.References = inJSON[i].References;
+        outJSON.name = inJSON[i].Name;
+        outJSON.scientificName = inJSON[i].Scientific_Name;
+        outJSON.type = inJSON[i].Type;
+        outJSON.tags = inJSON[i].Tags;
+        outJSON.overview = inJSON[i].Overview;
+        outJSON.habitat = inJSON[i].Habitat;
+        outJSON.references = inJSON[i].References;
         //fs.writeFileSync('json/'+collectionName+'.json',JSON.stringify(items));
         fs.writeFileSync('json/'+camelCase(inJSON[i].Name)+'.json',JSON.stringify(outJSON,null,'\t'));
     }
