@@ -26,7 +26,7 @@ try {
         outJSON.Habitat = inJSON[i].Habitat;
         outJSON.References = inJSON[i].References;
         //fs.writeFileSync('json/'+collectionName+'.json',JSON.stringify(items));
-        fs.writeFileSync('json/'+camelCase(inJSON[i].Name)+'.json',JSON.stringify(inJSON[0]));
+        fs.writeFileSync('json/'+camelCase(inJSON[i].Name)+'.json',JSON.stringify(outJSON,null,'\t'));
     }
 
     //fs.writeFileSync('./SpeciesFix.json',JSON.stringify(inJSON[0]));
