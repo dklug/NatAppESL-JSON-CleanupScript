@@ -17,7 +17,7 @@ try {
     for (var i=0; i<70; i++)
     {
         outJSON = {};
-        outJSON.fileName = "";
+        outJSON.imageLocation = "";
         outJSON.name = inJSON[i].Name;
         outJSON.scientificName = inJSON[i].Scientific_Name;
         outJSON.type = inJSON[i].Type;
@@ -25,8 +25,13 @@ try {
         outJSON.overview = inJSON[i].Overview;
         outJSON.habitat = inJSON[i].Habitat;
         outJSON.references = inJSON[i].References;
+        let names = camelCase(inJSON[i].Name);
+        if (names.indexOf(',')>0)
+        {
+            names = names.substr(0,names.indexOf(','));
+        }
         //fs.writeFileSync('json/'+collectionName+'.json',JSON.stringify(items));
-        fs.writeFileSync('json/'+camelCase(inJSON[i].Name)+'.json',JSON.stringify(outJSON,null,'\t'));
+        fs.writeFileSync('json/'+names+'.json',JSON.stringify(outJSON,null,'\t'));
     }
 
     //fs.writeFileSync('./SpeciesFix.json',JSON.stringify(inJSON[0]));
