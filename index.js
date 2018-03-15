@@ -25,6 +25,7 @@ try {
         outJSON.overview = inJSON[i].Overview;
         outJSON.habitat = inJSON[i].Habitat;
         outJSON.references = inJSON[i].References;
+        outJSON.versionNumber = 0;
         let names = camelCase(inJSON[i].Name);
         if (names.indexOf(',')>0)
         {
