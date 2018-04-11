@@ -17,14 +17,17 @@ try {
     for (var i=0; i<70; i++)
     {
         outJSON = {};
-        outJSON.imageLocation = "";
-        outJSON.name = inJSON[i].Name;
-        outJSON.scientificName = inJSON[i].Scientific_Name;
-        outJSON.type = inJSON[i].Type;
-        outJSON.tags = inJSON[i].Tags;
-        outJSON.overview = inJSON[i].Overview;
-        outJSON.habitat = inJSON[i].Habitat;
-        outJSON.references = inJSON[i].References;
+        outJSON.imageURL = "";
+        outJSON.name = ""+inJSON[i].Name;
+        outJSON.scientificName = ""+inJSON[i].Scientific_Name;
+        outJSON.overview = ""+inJSON[i].Overview;
+        outJSON.behavior = "";
+        outJSON.habitat = ""+inJSON[i].Habitat;
+        outJSON.size = "";
+        outJSON.conservationStatus = "";
+        outJSON.type = ""+inJSON[i].Type;
+        outJSON.tags = ""+inJSON[i].Tags;
+        outJSON.references = ""+inJSON[i].References;
         outJSON.versionNumber = 0;
         let names = camelCase(inJSON[i].Name);
         if (names.indexOf(',')>0)
